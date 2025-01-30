@@ -1,6 +1,7 @@
 import express from "express";
 import { AppDataSource } from "./data-source";
 import { UserController } from "./controller/UserController";
+import bot from "./bot";
 
 const app = express();
 const port = 3000;
@@ -16,6 +17,7 @@ const initializeApp = async () => {
         app.use("/api", userController.router);
 
         app.listen(port, () => {
+            bot.launch();
             console.log(`Server running on http://localhost:${port}`);
         });
     } catch (error) {

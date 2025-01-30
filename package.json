@@ -7,7 +7,9 @@
       "clean": "rm -rf dist",
       "start": "ts-node src/index.ts",
       "dev": "nodemon src/index.ts --exec ts-node",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "seed": "node seed/seed.ts",
+      "bot": "nodemon src/bot.ts --exec ts-node"
    },
    "keywords": [],
    "author": "",
@@ -19,6 +21,7 @@
       "express": "^4.17.2",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",
+      "telegraf": "^4.16.3",
       "typeorm": "0.3.20"
    },
    "devDependencies": {
