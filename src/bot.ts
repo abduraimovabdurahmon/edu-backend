@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { Telegraf } from "telegraf";
+import { User } from "./entity/User";
 
 
 const bot = new Telegraf(process.env.BOT_TOKEN as string);
@@ -48,7 +49,8 @@ bot.on("contact", async (ctx)=>{
 
         // proccess
         await ctx.sendChatAction('typing');
-        await sleep(3000);
+
+        
 
 
         return ctx.sendMessage("Platformaga kirish uchun bir martalik link: https://example.com/example?example=example");
@@ -60,8 +62,25 @@ bot.on("contact", async (ctx)=>{
 
 
 
-bot.on("message", (ctx)=>{
-    ctx.reply("Salom");
+bot.on("text", (ctx)=>{
+    try {
+        return ctx.reply("Assalomu alaykum, iltimos login va parolni olish uchun kontaktingizni yuboring, kontaktni yuborish uchun faqat pastdagi tugmadan foydalaning!",{
+            reply_markup: {
+                keyboard: [
+                    [
+                        {
+                            text: "Kontaktni yuborish",
+                            request_contact: true,
+                        }
+                    ]
+                ],
+                resize_keyboard: true
+            }
+            }
+        );
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 

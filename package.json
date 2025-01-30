@@ -9,7 +9,7 @@
       "dev": "nodemon src/index.ts --exec ts-node",
       "typeorm": "typeorm-ts-node-commonjs",
       "seed": "node seed/seed.ts",
-      "bot": "nodemon src/bot.ts --exec ts-node"
+      "test": "nodemon test.ts --exec ts-node"
    },
    "keywords": [],
    "author": "",
@@ -19,6 +19,7 @@
       "body-parser": "^1.19.1",
       "dotenv": "^16.4.7",
       "express": "^4.17.2",
+      "jsonwebtoken": "^9.0.2",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",
       "telegraf": "^4.16.3",
@@ -26,6 +27,7 @@
    },
    "devDependencies": {
       "@types/express": "^5.0.0",
+      "@types/jsonwebtoken": "^9.0.8",
       "@types/node": "^22.10.2",
       "nodemon": "^3.1.9",
       "ts-node": "10.9.1",
