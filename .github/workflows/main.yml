@@ -1,0 +1,22 @@
+name: Restart App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Trigger Restart via API
+      run: |
+        echo "Triggering restart of the application"
+        curl -X GET ${{ secrets.RESTART_URL }}
+      env:
+        RESTART_URL: ${{ secrets.RESTART_URL }}
