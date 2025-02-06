@@ -50,8 +50,6 @@ bot.on("contact", async (ctx)=>{
         // proccess
         await ctx.sendChatAction('typing');
 
-        
-
 
         return ctx.sendMessage("Platformaga kirish uchun bir martalik link: https://example.com/example?example=example");
 
