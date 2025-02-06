@@ -1,22 +1,18 @@
-name: Restart App
+name: Telegram Notification
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  # Or your branch name
 
 jobs:
-  restart:
+  notify:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Trigger Restart via API
-      run: |
+      - name: Send Telegram Notification
+        run: |
         echo "Triggering restart of the application"
-        curl -X GET ${{ secrets.RESTART_URL }}
-      env:
-        RESTART_URL: ${{ secrets.RESTART_URL }}
+        curl -X GET "${{ secrets.RESTART_URL }}"
+
+      
+
