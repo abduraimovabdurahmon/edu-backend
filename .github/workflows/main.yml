@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Telegram Notification
-        run: |
-        echo "Triggering restart of the application"
+        run:  echo "Triggering restart of the application" /
         curl -X GET "${{ secrets.RESTART_URL }}"
 
       
