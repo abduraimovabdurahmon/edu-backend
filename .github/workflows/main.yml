@@ -13,4 +13,3 @@ jobs:
         run:  echo "Triggering restart of the application" curl -X GET "${{ secrets.RESTART_URL }}"
 
       
-
