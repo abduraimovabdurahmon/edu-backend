@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
     port: parseInt(process.env.DATASOURCE_PORT || "5432"),
     username: process.env.DATASOURCE_USER,
     password: process.env.DATASOURCE_PASS,
-    database: process.env.DATASOURCE_NAME || "postgres",
+    database: process.env.DATASOURCE_NAME,
     synchronize: true,
     logging: false,
     entities: [__dirname + "/entity/*.ts"],

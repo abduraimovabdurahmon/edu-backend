@@ -8,7 +8,7 @@ export class User {
     id!: string;
 
     // telegram id, bu telegram id dan olinadi
-    @Column("tgid")
+    @Column({name: "tgid"})
     tgid!: string;
 
     // userning ismi, bu default telegram first name'dan olinadi
@@ -16,7 +16,7 @@ export class User {
     name!: string;
 
     // userning telefon raqami, bu telegramdan olinadi, majburiy
-    @Column("phone")
+    @Column({name: 'phone'})
     phone!: string;
 
 
