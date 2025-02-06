@@ -10,8 +10,11 @@ export class UserController {
     }
 
     private initializeRoutes() {
-
+        this.router.get("/test", (req: Request, res: Response) => {
+            res.json({ message: "UserController is working!" });
+        });
     }
+    
 
  
 }
